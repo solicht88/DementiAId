@@ -4,11 +4,7 @@ app = Flask(__name__)
 
 @app.route("/")
 def home():
-    return render_template('index.html', message='Hello, World!')
-
-@app.route("/test")
-def placeholder():
-    return render_template('index.html', message='I am 7 years old')
+    return render_template('index.html')
 
 if __name__ == '__main__':
     app.run(debug=True)
