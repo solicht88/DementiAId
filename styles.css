@@ -1,0 +1,126 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    scroll-behavior: smooth;
+    font-family: "Cardo", monospace;
+    font-weight: 500;
+}
+
+html {
+    font-size: 62.5%;
+    overflow-x: hidden;
+}
+
+section {
+    min-height: 100vh;
+    padding: 10rem 9% 2rem;
+}
+
+body {
+    background-color: #FFFDD0;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 2rem 9%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+    background: #000000;
+    background-color: #0e9817;
+    color: #ffffff;
+}
+
+header .date {
+    justify-content: center;
+    text-align: center;
+}
+
+header .profile {
+    justify-content: right;
+    text-align: right;
+}
+
+.home {
+
+}
+
+.service-btn {
+    display:grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    justify-content: center;
+    gap: 10rem;
+    background-color: #fffdd0}
+
+.service-btn:hover {
+    cursor:pointer
+}
+
+.service-btn .reminders-btn {
+    flex: 1 1 30rem;
+    background: #fff;
+    padding: 3rem 2rem 4rem;
+    border-radius: 2rem;
+    text-align: center;
+    border: .2rem solid #000;
+    transition: .5s ease;
+    backdrop-filter: blur(25px);
+    position: relative;
+    overflow: hidden;
+}
+
+.service-btn .blogs-btn {
+    flex: 1 1 30rem;
+    background: #ffffff;
+    padding: 3rem 2rem 4rem;
+    border-radius: 2rem;
+    text-align: center;
+    border: .2rem solid #000;
+    transition: .5s ease;
+    backdrop-filter: blur(25px);
+    position: relative;
+    overflow: hidden;
+}
+
+.experience-container .experience-box:hover {
+    border-color: #fffdd0;
+    transform: scale(1.02);
+}
+
+.experience-box h3 {
+    font-size: 2.6rem;
+    font-weight: 700;
+}
+
+.experience-box p {
+    font-size: 1.6rem;
+    margin: 1rem 0 3rem;
+}
+
+.footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 2rem 9%;
+    background: #0e9817;
+    color: #FFFDD0;
+}
+
+footer .profile {
+    text-align:right;
+}
+
+content .return {
+    
+}
