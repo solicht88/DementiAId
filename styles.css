@@ -1,5 +1,6 @@
 
 * {
+    justify-content: center;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -7,13 +8,13 @@
     border: none;
     outline: none;
     scroll-behavior: smooth;
-    font-family: "Cardo", monospace;
-    font-weight: 500;
+    font-family: "Roboto Slab", monospace;
+    font-weight: 400;
+    font-size: 24px;
 }
 
 html {
     font-size: 62.5%;
-    overflow-x: hidden;
 }
 
 section {
@@ -21,23 +22,40 @@ section {
     padding: 10rem 9% 2rem;
 }
 
-body {
-    background-color: #FFFDD0;
-}
+
 
 header {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    padding: 2rem 9%;
+    padding: 2rem 8%;
     display: flex;
     justify-content: space-between;
     align-items: center;
     z-index: 100;
-    background: #000000;
+    background: #0e9817;
     background-color: #0e9817;
-    color: #ffffff;
+    color: #FFFDD0;
+}
+
+body {
+    background-color: #FFFDD0;
+}
+
+.footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 2rem 9%;
+    background: #0e9817;
+    color:#FFFDD0;
+}
+
+span {
+    font-family: "Cardo", monospace;
+    color: #0e9817;
 }
 
 header .date {
@@ -45,51 +63,92 @@ header .date {
     text-align: center;
 }
 
+header .brand {
+    font-family: "Cardo", monospace;
+    background-color: #000;
+    border-radius: 30px;
+    color: #FFFDD0;
+    padding: 1rem;
+}
+
+
 header .profile {
     justify-content: right;
     text-align: right;
 }
 
-.home {
+.title {
+    justify-content: space-between;
+    text-align: center;
+    color:#000;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+}
 
+.home .return i {
+    margin-top: 2rem;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.8rem;
+    background: #0e9817;
+    border-radius: 0.8rem;
+    transition: 0.5s ease;
+    font-size: 2.4rem;
+    color: #FFFDD0;
 }
 
 .service-btn {
-    display:grid;
-    grid-template-columns: repeat(2, 1fr);
-    align-items: center;
-    justify-content: center;
-    gap: 10rem;
-    background-color: #fffdd0}
-
-.service-btn:hover {
-    cursor:pointer
-}
-
-.service-btn .reminders-btn {
     flex: 1 1 30rem;
     background: #fff;
-    padding: 3rem 2rem 4rem;
+    padding: 2rem 2rem 2rem;
     border-radius: 2rem;
     text-align: center;
-    border: .2rem solid #000;
     transition: .5s ease;
     backdrop-filter: blur(25px);
     position: relative;
     overflow: hidden;
+    height: 100%;
+    background-color: #0e9817;
+    display: grid;
+    grid-template-columns: repeat(2, 2fr);
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    cursor: pointer;
+}
+
+.service-btn:hover {
+    cursor: pointer;
+}
+
+.service-btn .reminders-btn {
+    background-image: url("assets/reminders.webp");
+    flex: 1 1 30rem;
+    background: #fff;
+    padding: 3rem 2rem 35rem;
+    border-radius: 2rem;
+    text-align: center;
+    transition: .5s ease;
+    backdrop-filter: blur(25px);
+    position: relative;
+    overflow: hidden;
+    height: 100%;
 }
 
 .service-btn .blogs-btn {
+    background-image: url("assets/reminders.webp");
+    justify-content: center;
     flex: 1 1 30rem;
     background: #ffffff;
     padding: 3rem 2rem 4rem;
     border-radius: 2rem;
     text-align: center;
-    border: .2rem solid #000;
     transition: .5s ease;
     backdrop-filter: blur(25px);
     position: relative;
     overflow: hidden;
+    height: 100%;
 }
 
 .experience-container .experience-box:hover {
@@ -107,20 +166,67 @@ header .profile {
     margin: 1rem 0 3rem;
 }
 
-.footer {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    padding: 2rem 9%;
-    background: #0e9817;
-    color: #FFFDD0;
-}
-
 footer .profile {
     text-align:right;
 }
 
-content .return {
-    
+.home-content {
+    align-items: center;
+}
+
+.service-btn .projects-box {
+    position: relative;
+    border-radius: 2rem;
+    box-shadow : 0 0 1rem #fff;
+    overflow: hidden;
+    display: flex;
+}
+
+.reminders-btn img {
+    max-width: 100%;
+    height: 100%;
+    transition: 0.5s ease;
+    object-fit: cover;
+}
+
+.blogs-btn img {
+    width: 100%;
+    height: 100%;
+    transition: 0.5s ease;
+}
+
+.service-btn .projects-layer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(#FFFDD0, #0e9817);
+    opacity: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    padding: 0 4rem;
+    transform: translateY(100%);
+    transition: 0.5s ease;
+}
+
+.reminders-btn:hover .projects-layer {
+    cursor: pointer;
+    transform: translateY(0);
+}
+
+.blogs-btn:hover .projects-layer {
+    cursor: pointer;
+    transform: translateY(0);
+}
+
+.reminders-btn:hover img {
+    transform: scale(1.1);
+}
+
+.blogs-btn:hover img {
+    transform: scale(1.1);
 }
