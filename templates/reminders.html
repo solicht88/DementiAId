@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Dementia Help App</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='reminderstyle.css') }}" />
+  </head>
+  <body>
+    <h1 style="color: #577D56;">Reminders</h1>
+    <div class="section">
+      <h3>Today</h3>
+      <form id="today">
+        <input type="checkbox" id="task" name="task" />
+        <label for="task">Clean the dishes</label><br />
+      </form>
+    </div>
+    <br />
+    <div class="section">
+      <h3>Later</h3>
+      <form id="later">
+      </form>
+    </div>
+    <br />
+    <div id="add-new">
+      <button type="button" id="add-reminder" name="add-reminder">+</button>
+      <label for="add-reminder" id="reminder-label">Add new reminder</label><br />  
+      <script type="text/javascript">
+        function addReminder() {
+          document.getElementById("add-new").style.display = 'none';
+          document.getElementById("create-new").style.display = 'block';
+        }
+        document.getElementById("add-reminder").addEventListener("click", addReminder);
+      </script>
+    </div>
+    <div id="create-new" style="display:none;">
+      <form>
+        <select name="date" id="date">
+          <option value="today">Today</option>
+          <option value="later">Later</option>
+          <option> more dates + times</option>
+        </select>
+        <input type="text" id="create" name="create" />
+        <button type="button" id="create-reminder" name="create-reminder">Add</button>
+      </form>
+      <script type="text/javascript">
+        function createReminder() {
+          newReminder = document.getElementById("create").value;
+          if (newReminder.trim() === '') {
+            alert('Please enter a reminder.');
+            return;
+          }
+          const reminder= document.createElement('input');
+          reminder.type = 'checkbox';
+          reminder.id = newReminder;
+          reminder.name = newReminder;
+          const label = document.createElement('label');
+          label.htmlFor = newReminder;
+          label.appendChild(document.createTextNode(newReminder));
+          const time = document.getElementById('date');
+          if (time.selectedIndex === 2) {
+            alert('Invalid time/date!');
+            return;
+          }
+          const container = document.getElementById(time.options[time.selectedIndex].value);
+          container.appendChild(reminder);
+          container.appendChild(label);
+          container.appendChild(document.createElement('br'));
+          alert("Reminder created!");
+          document.getElementById("create").value = '';
+          document.getElementById("create-new").style.display = 'none';
+          document.getElementById("add-new").style.display = 'block';
+        }
+        document.getElementById("create-reminder").addEventListener("click", createReminder);
+      </script>
+    </div>
+    <footer class="footer">
+      <h3 style="font-size: 14px;">DementAId</h3>
+      <h3 style="font-size: 14px;">Jamhacks 8 Submission</h3>
+  </footer>
+  </body>
+</html>
