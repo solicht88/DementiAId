@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cardo:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap" rel="stylesheet">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+    <title>Dementia Help App</title>
+</head>
+<body>
+    <header class="header">
+        <h3 class="date">June 9th 2024</h3>
+        <h3 class="brand">Dement<span>AI</span>d</h3>
+        <h3 class="profile">Hello, Martha</h3>
+    </header>
+
+    <section class="home">
+        <h1 class="title">Home</h1>
+        <div class="home-content">
+            <button class="service-btn">
+
+                <a href="http://127.0.0.1:5000/reminders" class="reminders-btn">
+                    <div class="service-layer">
+                        <img src="{{ url_for('static', filename='reminders.webp') }}">
+                            <div class="projects-layer">
+                                <h2>Reminders</h2>
+                            </div>
+                        </img>
+                    </div>
+                </a> 
+                    
+                <a href="http://127.0.0.1:5000/blog" class="blogs-btn">
+                    <div class="service-layer">
+                        <img src="{{ url_for('static', filename='blog.jpeg') }}">
+                            <div class="projects-layer">
+                                <h2>Blogs</h2>
+                            </div>
+                        </img>
+                    </div>
+                </a>
+
+            </button>
+        </div>
+        <h1 class="title">Our Mission</h1>
+        <p>
+            DementAId aims to ease the treatment of dementia patients for the patient, their caretaker, and their family.<br><br>
+            DementAId includes three main functions: reminders, blogs, and an AI chatbot.
+            Each function is free to use and easily accessible to provide effective care.<br><br>
+            When a caretaker is not around, there are reminders and an AI chatbot to 
+            compensate and remind the patient of things they need to do.
+            The patient can keep touch with their memories through the blog function to
+            share with their grandchildren and pass down their stories.
+        </p>
+        
+    </section>
+
+    <footer class="footer">
+        <h3>DementAId</h3>
+        <h3>Jamhacks 8 Submission</h3>
+    </footer>
+
+    <script type="text/javascript">
+        (function(d, t) {
+            var v = d.createElement(t), s = d.getElementsByTagName(t)[0];
+            v.onload = function() {
+              window.voiceflow.chat.load({
+                verify: { projectID: '66644be40c5aef4fa4bc0af1' },
+                url: 'https://general-runtime.voiceflow.com',
+                versionID: 'production'
+              });
+            }
+            v.src = "https://cdn.voiceflow.com/widget/bundle.mjs"; v.type = "text/javascript"; s.parentNode.insertBefore(v, s);
+        })(document, 'script');
+    </script>
+</body>
+</html>
