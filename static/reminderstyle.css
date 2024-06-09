@@ -1,0 +1,57 @@
+@import url('https://fonts.googleapis.com/css2?family=Kameron:wght@400..700&display=swap');
+
+body, div, h1 {
+  margin-left: 20%;
+  margin-right: 20%;
+}
+
+body {
+  background-color: #F6ECC7;
+  font-family: "Kameron", serif;
+  font-weight: bold;
+}
+
+h1 {
+  margin-left: 10%;
+  margin-right: 10%;
+  font-size: 40px;
+}
+
+h3 {
+  font-size: 28px;
+  padding-left: 10px;
+}
+
+label {
+  font-size: 20px;
+}
+
+button {
+  font-size: 20px;
+  text-align: center;
+  font-family: "Kameron", serif;
+}
+
+select, input[type="text"] {
+  font-size: 20px;
+  font-family: "Kameron", serif;
+}
+
+.section {
+  background-color: #FFFFFF;
+  border-radius: 25px;
+  padding: 25px;
+  padding-top: 10px;
+  margin-left: 25px;
+  margin-right: 25px;
+  font-weight: normal;
+}
+
+#add-new {
+  margin-left: 10%;
+}
+
+#create-new {
+  display: inline;
+  margin-left: 10%;
+}
