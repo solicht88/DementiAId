@@ -3,74 +3,86 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
-    <title>Dementia Help App</title>
+    <title>DementAId</title>
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='blogstyle.css') }}" />
   </head>
   <body>
-    <h1 style="color: #6E1F1F;">Blogs</h1>
-    <div id="blogs">
-      <div class="section">
-        <h3>Sun Jun 9 2024</h3>
-        <p>My grandchildren came to visit.</p>
+    <header class="header">
+      <h3 class="date">June 9th 2024</h3>
+      <h3 class="brand">Dement<span>AI</span>d</h3>
+      <h3 class="profile">Hello, Martha</h3>
+    </header>
+
+    <section>
+      <h1 id="title">Blogs</h1>
+      <div id="blogs">
+        <div class="blogpost">
+          <h3 class="subtitle">Sun Jun 9 2024</h3>
+          <p class="post-content">I baked cookies with my grandchildren.</p>
+        </div>
+        <br />
+        <div class="blogpost">
+          <h3 class="subtitle">Sat Jun 08 2024</h3>
+          <p class="post-content">Sam came to visit today.</p>
+          <form id="later">
+          </form>
+        </div>
+        <br />
       </div>
-      <br />
-      <div class="section">
-        <h3>Sat Jun 08 2024</h3>
-        <p>Martha came to visit today.</p>
-        <form id="later">
-        </form>
-      </div>
-      <br />
-    </div>
-    <div id="add-new">
-      <button type="button" id="add-post" name="add-post">+</button>
-      <label for="add-reminder" id="reminder-label">Post new blog</label><br />  
-      <script type="text/javascript">
-        function addPost() {
-          document.getElementById("add-new").style.display = 'none';
-          document.getElementById("create-new").style.display = 'block';
-        }
-        document.getElementById("add-post").addEventListener("click", addPost);
-      </script>
-    </div>
-    <div id="create-new" style="display:none;">
-      <form>
-        <textarea type="text" id="create" name="create" rows="5" cols="60"></textarea>
-        <button type="button" id="create-post" name="create-post">Add</button>
-      </form>
-      <script type="text/javascript">
-        function createPost() {
-          newPost = document.getElementById("create").value;
-          if (newPost.trim() === '') {
-            alert('Please enter some text.');
-            return;
+      <div id="add-new">
+        <button type="button" id="add-post" name="add-post">+</button>
+        <label for="add-reminder" id="reminder-label">Post new blog</label><br />  
+        <script type="text/javascript">
+          function addPost() {
+            document.getElementById("add-new").style.display = 'none';
+            document.getElementById("create-new").style.display = 'block';
           }
-          const post = document.createElement('p');
-          post.id = post;
-          post.name = post;
-          post.textContent = newPost;
-          const d = new Date().toDateString();
-          const date = document.createElement('h3');
-          date.textContent = d;
-          console.log(d);
-          const container = document.createElement('div');
-          container.className = 'section';
-          container.appendChild(date);
-          container.appendChild(post);
-          const blogContainer = document.getElementById("blogs");
-          blogContainer.insertBefore(document.createElement('br'), blogContainer.firstChild)
-          blogContainer.insertBefore(container, blogContainer.firstChild);
-          alert("Blog posted!");
-          document.getElementById("create").value = '';
-          document.getElementById("create-new").style.display = 'none';
-          document.getElementById("add-new").style.display = 'block';
-        }
-        document.getElementById("create-post").addEventListener("click", createPost);
-      </script>
-    </div>
+          document.getElementById("add-post").addEventListener("click", addPost);
+        </script>
+      </div>
+      <div id="create-new" style="display:none;">
+        <form>
+          <textarea type="text" id="create" name="create" rows="5" cols="60"></textarea>
+          <button type="button" id="create-post" name="create-post">Add</button>
+        </form>
+        <script type="text/javascript">
+          function createPost() {
+            newPost = document.getElementById("create").value;
+            if (newPost.trim() === '') {
+              alert('Please enter some text.');
+              return;
+            }
+            const post = document.createElement('p');
+            post.id = post;
+            post.name = post;
+            post.className = 'post-content';
+            post.textContent = newPost;
+            const d = new Date().toDateString();
+            const date = document.createElement('h3');
+            date.textContent = d;
+            date.className = 'subtitle';
+            const container = document.createElement('div');
+            container.className = 'blogpost';
+            container.appendChild(date);
+            container.appendChild(post);
+            const blogContainer = document.getElementById("blogs");
+            blogContainer.insertBefore(document.createElement('br'), blogContainer.firstChild)
+            blogContainer.insertBefore(container, blogContainer.firstChild);
+            alert("Blog posted!");
+            document.getElementById("create").value = '';
+            document.getElementById("create-new").style.display = 'none';
+            document.getElementById("add-new").style.display = 'block';
+          }
+          document.getElementById("create-post").addEventListener("click", createPost);
+        </script>
+      </div>
+      <div id="go-home">
+        <a href="http://127.0.0.1:5000">Home</a>
+      </div>
+    </section>
     <footer class="footer">
-      <h3 style="font-size: 14px;">DementAId</h3>
-      <h3 style="font-size: 14px;">Jamhacks 8 Submission</h3>
-  </footer>
+      <h3>DementAId</h3>
+      <h3>Jamhacks 8 Submission</h3>
+    </footer>
   </body>
 </html>
