@@ -1,12 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Kameron:wght@400..700&display=swap');
 
-body, div, h1 {
+body, h1 {
   margin-left: 20%;
   margin-right: 20%;
 }
 
 body {
-  background-color: #F6ECC7;
+  background-color: #DBC6C6; 
   font-family: "Kameron", serif;
   font-weight: bold;
 }
@@ -32,8 +32,14 @@ button {
   font-family: "Kameron", serif;
 }
 
-select, input[type="text"] {
+textarea {
   font-size: 20px;
+  font-family: "Kameron", serif;
+}
+
+p {
+  padding-left: 15px;
+  font-size: 16px;
   font-family: "Kameron", serif;
 }
 
