@@ -8,7 +8,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap" rel="stylesheet">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link rel="stylesheet" href="../static/styles.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
     <title>DementAId</title>
 </head>
@@ -24,9 +24,9 @@
         <div class="home-content">
             <button class="service-btn">
 
-                <a href="http://127.0.0.1:5000/reminders" class="reminders-btn">
+                <a href="reminders.html" class="reminders-btn">
                     <div class="service-layer">
-                        <img src="{{ url_for('static', filename='reminders.webp') }}">
+                        <img src="../assets/reminders.webp">
                             <div class="projects-layer">
                                 <h2>Reminders</h2>
                             </div>
@@ -34,9 +34,9 @@
                     </div>
                 </a> 
                     
-                <a href="http://127.0.0.1:5000/blog" class="blogs-btn">
+                <a href="blog.html" class="blogs-btn">
                     <div class="service-layer">
-                        <img src="{{ url_for('static', filename='blog.jpeg') }}">
+                        <img src="../assets/blog.jpeg">
                             <div class="projects-layer">
                                 <h2>Blogs</h2>
                             </div>
