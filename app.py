@@ -17,4 +17,4 @@ def blog():
 if __name__ == '__main__':
     app.run(debug=True)
 
-# run 'python app.py' then go to http://127.0.0.1:5000/ to preview
+# run 'python3 app.py' in the terminal, then go to http://127.0.0.1:5000/ to preview
